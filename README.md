@@ -9,7 +9,7 @@ This is a diagram of the model used for my training. Given two crops of the left
 
 
 ## Data setup
-To analyze error rates for people of color, I created subsets of the dataset. From the training set, I separated out images from 10 people of color and images from 10 white (or white-passing) people. From the test set, I also did the same splits for 10 people of color and 10 white people.
+To analyze error rates for people of color, I created subsets of the dataset. I separated out the people of color images and white people images into two sets for each training and test set. So, at the end, I had 4 sets of images: POC train, white train, POC test, and white test. HUGE DISCLAIMER: Since the original dataset gathered by MIT didn't have race as a label, I personally made the judgement whether someone was a POC or not. I only included the images I was 100$ sure whether the person is a POC or white and then I left the images I was unsure of outside of the sets. I manually went through all of the images and this process took many, many hours. The people of color took up ~30% of the dataset, so ~70% of all images were of white people.
 
 If you are unfamiliar with machine learning, the training set is the set of images that the model directly learns from, doing computations and optimizations to improve performance on this image set. The test set is the set of images that are a representation of the "real world". Since the model has never seen the images in the test set, we can estimate the performance of our model on real, unseen data. Achieving great performance on the test set is the goal of machine learning.
 
@@ -45,6 +45,6 @@ If we look at the training set, we have successfully improved performance on the
 
 ## Future Work
 There are two more things I want to do with this project:
-1. Classify all people in the dataset and continue training the model with all people of color in the training set, not just 10. The hope here is that this will improve performance on the test POC subset.
+1. Find other ways to improve loss on POC: data augmentation on POC images to "create" more images of POC.
 
 2. Gather more training images of people of color and re-train our model with new samples. If the whole problem in the first place is that people of color are lacking in the dataset, then adding more people of color into the dataset *should* fix the problem. The hope here is that our dataset will be more even and our model will learn to perform well on both white people and people of color. This approach tends to be more expensive because gathering more training data is the hard part of machine learning. So, this project tries to solve this problem without gathering more data.
