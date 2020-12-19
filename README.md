@@ -7,6 +7,8 @@ Gazecapture is a prediction model where given a selfie (image) of a person looki
 This is a diagram of the model used for my training. Given two crops of the left and right eye, a crop of the face, and a face grid, we run the images through a series of layers and calculations to produce a final x-y prediction.
 
 This model is smaller than the original model because I trained the model on a single local GPU. Using the original model took too long to train the model on my machine. I implemented a smaller model and trained it for many iterations until the loss converged.
+
+
 ![gazecapture model](./res/gazecapture-model.png)
 
 
