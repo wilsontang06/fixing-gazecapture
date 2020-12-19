@@ -5,6 +5,8 @@ Racial biases in computer vision tasks, such as facial recognition, has been a w
 Gazecapture is a prediction model where given a selfie (image) of a person looking at the screen, it predicts the x and y coordinate of where the person is looking at on the screen. This is useful for eye tracking applications and are much less expensive than state-of-art eye tracking equipment, such as using physical sensors that track the eye.
 
 This is a diagram of the model used for my training. Given two crops of the left and right eye, a crop of the face, and a face grid, we run the images through a series of layers and calculations to produce a final x-y prediction.
+
+This model is smaller than the original model because I trained the model on a single local GPU. Using the original model took too long to train the model on my machine. I implemented a smaller model and trained it for many iterations until the loss converged.
 ![gazecapture model](./res/gazecapture-model.png)
 
 
